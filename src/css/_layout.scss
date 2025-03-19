@@ -1,0 +1,280 @@
+@use "base";
+
+// Navmenu
+@media (min-width: 601px) {
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    a {
+        text-decoration: none;
+
+        &.duarhar {
+            text-decoration: underline;
+        }
+    }
+}
+}
+/* CSS för mobilmenyn och att den endast visas för mindre skärmar */
+@media (max-width: 600px) {
+nav {
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.71);
+    font-size: 1.4em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    display: none;
+    z-index: 1000; /* Placera menyn längst fram */
+    ul {
+        width: 100%;
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+        position: absolute;
+        top: 3em;
+        li {
+            padding: 0.8em 0;
+            width: 100%;
+            font-size: medium;
+            margin: 10px;
+            a {
+                text-decoration: none;
+                padding: 0 1em;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+.mobilmenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+/* Meny knapp, öppna meny */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    position: absolute;
+    right: 2em;
+}
+    .menutext {
+        font-size: 1.2em;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        line-height: 25px;
+    }
+}
+
+.open {
+    margin: 0 1em;
+}
+/* CSS för hamburger-icon */
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+/* Meny knapp, stäng */
+.close {
+    margin: 1em 1.5em;
+    padding: 10px 15px;
+    width: auto;
+    height: auto;
+}
+/* Skapa kryss */
+.cross1, .cross2 {
+    width: 25px;
+    position: relative;
+}
+.cross1 {
+    transform: rotate(45deg);
+    top: 5px;
+}
+.cross2 {
+    transform: rotate(135deg);
+    top: -3px;
+}
+
+// Layout
+@media (min-width: 1025px) {
+.close{display: none;} 
+.menu-btn {display: none;} 
+.mobilmenu {display: none !important;} 
+%centered-content-computer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+body {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    grid-template-rows: auto;
+    margin: 0;
+    @extend %centered-content-computer;
+
+    .header {
+        grid-area: header;
+        text-align: center;
+        margin: 2em;
+    }
+    .main {
+        grid-area: main;
+        padding: 2em;
+        margin: 2em;
+        @extend %centered-content-computer;
+        p {
+            max-width: 500px;
+            text-align: left;
+            margin: 20px;
+        }
+        img {
+            width: 400px;
+            height: 500px;
+            @extend %centered-content-computer;
+        }
+    }
+    .footer {
+        @extend %centered-content-computer;
+        font-size: large;
+        margin: 2em;
+    }
+}
+}
+@media (max-width: 1024px) {
+.close{display: none;} 
+.menu-btn {display: none;} 
+.mobilmenu {display: none !important;} 
+%centered-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+    body {
+        display: grid;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        grid-template-rows: auto;
+        margin: 0;
+        @extend %centered-content;
+    
+        .header {
+            grid-area: header;
+            text-align: center;
+            margin: 2em;
+        }
+        .main {
+            grid-area: main;
+            padding: 2em;
+            margin: 2em;
+            @extend %centered-content;
+            p {
+                max-width: 500px;
+                text-align: left;
+                margin: 20px;
+            }
+            img {
+                width: 300px;
+                height: 400px;
+                @extend %centered-content;
+            }
+        }
+        .footer {
+            @extend %centered-content;
+            font-size: large;
+            margin: 2em;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .close{display: block;} 
+    .menu-btn {display: block;} 
+    .mobilmenu {display: block !important;} 
+    .bars {display: block !important;}
+    %centered-content-mobile {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    body {
+        display: grid;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        grid-template-rows: auto;
+        margin: 0;
+        @extend %centered-content-mobile;
+    
+        .header {
+            grid-area: header;
+            text-align: center;
+            margin: 2em;
+            display: grid;
+            grid-template-areas: 
+            "mainheader menubutton";
+            grid-template-rows: auto;
+            h1 {
+                grid-area: mainheader;
+            }
+            button {
+                grid-area: menubutton;
+                display: flex;
+                @extend %centered-content-mobile;
+            }
+        }
+        .main {
+            grid-area: main;
+            padding: 2em;
+            margin: 2em;
+            @extend %centered-content-mobile;
+            p {
+                max-width: 500px;
+                text-align: left;
+                margin: 20px;
+            }
+            img {
+                width: 200px;
+                height: 300px;
+                @extend %centered-content-mobile;
+            }
+        }
+        .footer {
+            @extend %centered-content-mobile;
+            font-size: large;
+            margin: 2em;
+        }
+    }
+}
