@@ -13,3 +13,25 @@ nav {
     }
   }
 }
+
+// Gör att .ozzyimg flyttas över sidan fram och tillbaka
+@keyframes movingimg {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(100vw);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.ozzyimg {
+  width: 200px; 
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation: movingimg 10s linear infinite;
+}
