@@ -16,6 +16,9 @@
     body { // Bakgrundsfärg hela sidan
         background-color: base.$primary-color;
         @include dark-text; // Mörk text
+        h1 {
+            background-color: base.$light-footer-color;
+        }
         nav {
             background-color: base.$primary-color;
 
@@ -23,8 +26,11 @@
                 @include dark-text; // Mörk text
             }
             &:hover {
-                background-color: base.$primary-color;
+                background-color: base.$light-footer-color;
             }
+        }
+        .menu {
+            background-color: base.$light-footer-color;
         }
         .menu-btn { // Menubutton
             background-color: base.$primary-color;
@@ -41,6 +47,9 @@
             background-color: base.$lighten-color;
             @include dark-text; // Mörk text
         }
+        .footer {
+            background-color: base.$light-footer-color;
+        }
     }
 }
 // Mörkttema
@@ -51,6 +60,9 @@
     body { // Bakgrundsfärg hela sidan
         background-color: base.$darken-color;
         @include light-text; // Ljustext
+        h1 {
+            background-color: base.$secondary-color;
+        }
     nav {
         background-color: base.$darken-color;
 
@@ -58,8 +70,11 @@
             @include light-text; // Ljustext på meny
         }
         &:hover {
-            background-color: base.$darken-color;
+            background-color: base.$dark-footer-color;
         }
+        }
+        #menu {
+            background-color: base.$dark-footer-color;
         }
         .menu-btn { // Menubutton
             background-color: base.$darken-color;
@@ -75,6 +90,9 @@
         .main { // Bakgrundsfärg innehåll
             background-color: base.$secondary-color;
             @include light-text; // Ljustext
+        }
+        .footer {
+            background-color: base.$dark-footer-color;
         }
     }
 }
