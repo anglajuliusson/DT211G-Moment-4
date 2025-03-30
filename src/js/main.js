@@ -20,3 +20,12 @@ function toggleMenu (){
         navMenuEl.style.display ="none";
     }
 }
+
+// Knapp som ändrar färg vid klick
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector(".animering_btn");
+
+    button.addEventListener("click", function () {
+        button.classList.toggle("active");
+    });
+});

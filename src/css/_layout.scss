@@ -213,7 +213,9 @@ body {
         display: flex;
         top: 480px
     }
-    
+    .animering_btn {
+        margin: 2em
+    }
     .footer {
         @extend %centered-content-computer;
         grid-area: footer;
@@ -314,7 +316,9 @@ body {
             padding: 2em;
             margin: 2em;
         }
-        
+        .animering_btn {
+            margin: 2em
+        }
         .footer {
             @extend %centered-content;
             font-size: large;
@@ -418,6 +422,9 @@ body {
         }
         .infotext_sass {
             @extend %centered-content-mobile;
+        }
+        .animering_btn {
+            margin: 2em
         }
         .footer {
             @extend %centered-content-mobile;
