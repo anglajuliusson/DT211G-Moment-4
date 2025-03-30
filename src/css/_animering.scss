@@ -20,7 +20,7 @@ nav {
       transform: translateX(0);
   }
   50% {
-      transform: translateX(100vw);
+      transform: translateX(calc(100vw - 100%)); // Studdsar mellan skärmens kant
   }
   100% {
       transform: translateX(0);
