@@ -160,6 +160,7 @@ body {
         text-align: center;
         margin: 2em;
         @extend %centered-content-computer;
+        z-index: 1000;
         h1 {
             padding: 1.5em;
             border-radius: 50%;
@@ -180,20 +181,39 @@ body {
             text-align: left;
             margin: 20px;
         }
-        img {
+        .overallimg {
             width: 400px;
             height: 500px;
             @extend %centered-content-computer;
         }
+        .skoterimg {
+            width: 300px;
+            height: 400px;
+            @extend %centered-content-computer;
+        }
+    }
+    .animering_img {
+        grid-area: main;
+        height: 420px;
+        width: 550px;
+        display: grid;
+        grid-template-areas: 
+        "ozzyimg";
+        grid-template-rows: auto;
+        @extend %centered-content-computer;
     }
     .ozzyimg {
-        width: 200px; 
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
+        grid-area: ozzyimg;
+        width: 400px; 
+        height: 400px;
+        height: auto;
+        display: block;
+        margin: auto; 
         animation: movingimg 10s linear infinite;
-      }
+        display: flex;
+        top: 480px
+    }
+    
     .footer {
         @extend %centered-content-computer;
         grid-area: footer;
@@ -230,6 +250,7 @@ body {
             text-align: center;
             margin: 2em;
             @extend %centered-content;
+            z-index: 1000;
             h1 {
                 padding: 1.5em;
                 border-radius: 50%;
@@ -252,11 +273,37 @@ body {
                 text-align: left;
                 margin: 20px;
             }
-            img {
+            .overallimg {
                 width: 300px;
                 height: 400px;
                 @extend %centered-content;
             }
+            .skoterimg {
+                width: 300px;
+                height: 400px;
+                @extend %centered-content;
+            }
+        }
+        .animering_img {
+            grid-area: main;
+            height: 420px;
+            width: 550px;
+            display: grid;
+            grid-template-areas: 
+            "ozzyimg";
+            grid-template-rows: auto;
+            @extend %centered-content;
+        }
+        .ozzyimg {
+            grid-area: ozzyimg;
+            width: 400px; 
+            height: 400px;
+            height: auto;
+            display: block;
+            margin: auto; 
+            animation: movingimg 10s linear infinite;
+            display: flex;
+            top: 450px
         }
         .infotext_index {
             padding: 2em;
@@ -266,19 +313,6 @@ body {
             @extend %centered-content;
             padding: 2em;
             margin: 2em;
-        }
-        .animering_img {
-            padding: 0;
-            margin: 0;
-            width: 100%; 
-            display: flex;
-            @extend %centered-content;
-        }
-        .ozzyimg {
-            display: block;
-            width: 300px;
-            height: 400px;
-            margin: 0 auto;
         }
         
         .footer {
@@ -350,11 +384,37 @@ body {
                 text-align: left;
                 margin: 20px;
             }
-            img {
+            .overallimg {
                 width: 200px;
                 height: 300px;
                 @extend %centered-content-mobile;
             }
+            .skoterimg {
+                width: 200px;
+                height: 300px;
+                @extend %centered-content-mobile;   
+            }
+        }
+        .animering_img {
+            grid-area: main;
+            height: 420px;
+            width: 550px;
+            display: grid;
+            grid-template-areas: 
+            "ozzyimg";
+            grid-template-rows: auto;
+            @extend %centered-content-mobile;
+        }
+        .ozzyimg {
+            grid-area: ozzyimg;
+            width: 400px; 
+            height: 400px;
+            height: auto;
+            display: block;
+            margin: auto; 
+            animation: movingimg 10s linear infinite;
+            display: flex;
+            top: 390px
         }
         .infotext_sass {
             @extend %centered-content-mobile;
